@@ -1,19 +1,19 @@
 function adicionar() {
-   //recuperar valores nome do produto, valor e quantidade
+    //recuperar valores nome do produto, valor e quantidade
     let produto = document.getElementById('produto').value;
     let nomeProduto = produto.split('-')[0];
     let valorUnitario = produto.split('R$')[1];
-    let quantidade = document.getElementById('quantidade');
-    alert(nomeProduto);
-    alert(valorUnitario);
-    alert(quantidade.value);
-    let preco = quantidade.value * valorUnitario;
-    alert(preco);
+    let quantidade = document.getElementById('quantidade').value;
+    //calcular o preço, subtotal
+    let preco = quantidade * valorUnitario;
+    let carrinho = document.getElementById('lista-produtos');
+    //adicionar no carrinho
+    carrinho.innerHTML = carrinho.innerHTML + `<section class="carrinho__produtos__produto">
+          <span class="texto-azul">${quantidade}x</span> ${nomeProduto} <span class="texto-azul">R$${preco}</span>
+        </section>`;
 
-
-   //calcular o preço, subtotal
-   //adicionar no carrinho
-   //atualizar o valor total
+    
+    //atualizar o valor total
 }
 
 
